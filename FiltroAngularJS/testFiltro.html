@@ -1,0 +1,26 @@
+<html ng-app="MyApp">
+<head>
+	<title>Test Filtro Custom</title>
+	<script src="angular.min.js"></script>
+	<script src="controllerFiltro.js"></script>
+</head>
+<body>
+	<h1>Test Filtro AngularJS</h1>
+	<div ng-controller="ListaCtrl">
+		<p>Provo filtro che rende maiuscole le parole.</p>
+		<ul>
+			<li ng-repeat="item in items">{{item.nome | maiuscolo}}</li>
+		</ul>
+	</div>
+	<hr/>
+	<div ng-controller="ListaCtrl2">
+		<p>Prova filtraggio elementi di array a partire da una lettera inserita</p>
+		<input type="text" ng-model="letter">
+		<ul>
+			<li ng-repeat="element in elencoNomi | filtroPrimaLettera:letter">{{element.nome}}</li>
+		</ul>
+	</div>
+
+
+</body>
+</html>
